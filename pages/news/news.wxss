@@ -1,0 +1,19 @@
+.container{
+  padding: 15rpx;
+  text-align: center;
+}
+.title{
+  font-size: 35rpx;
+  line-height: 35rpx;
+}
+.img image{
+  width: 100%;
+}
+.content{
+  text-align: left;
+  font-size: 30rpx;
+  line-height: 35rpx;
+}
+.author{
+  font-size: 25rpx;
+}

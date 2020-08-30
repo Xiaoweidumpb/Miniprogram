@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/learn/learn",
+    "pages/news/news",
+    "pages/my/my",
+    "pages/word/word",
+    "pages/insight/insight"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2c2c2c",
+    "navigationBarTitleText": "Killknife",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/learn/learn",
+      "text": "学习",
+      "iconPath": "icon/learn.png",
+      "selectedIconPath": "icon/learn_s.png"
+    },
+    {
+      "pagePath":"pages/word/word",
+      "text": "单词",
+      "iconPath": "icon/word.png",
+      "selectedIconPath": "icon/word_s.png"
+    },
+    {
+      "pagePath": "pages/insight/insight",
+      "text": "发现",
+      "iconPath": "icon/insight.png",
+      "selectedIconPath": "icon/insight_s.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "icon/my.png",
+      "selectedIconPath": "icon/my_s.png"
+    }
+  ]
+  },
+  
+  
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

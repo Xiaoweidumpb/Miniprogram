@@ -1,0 +1,18 @@
+
+/* 每个具体的新闻 */
+.news-item{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid blanchedalmond;
+}
+/* 新闻 */
+.news-item image{
+  height:150rpx;
+  width: 300rpx;
+  margin: 10rpx;
+}
+.news-item text{
+  width: 100%;
+  line-height: 60rpx;
+  font-size: 30rpx;
+} 

@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="title">{{article.title}}</view>
+  <view class="author">{{article.author}}</view>
+  <view class="img">
+    <image src="{{article.imag}}"></image>
+  </view>
+  <view class="content">{{article.content}}</view>
+  <button wx:if= "{{isAdd}}" plain bindtap="cancelFavorita">已收藏</button>
+  <button wx:else plain bindtap="addFavorites">未收藏</button>
+</view>

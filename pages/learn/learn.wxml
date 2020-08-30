@@ -1,0 +1,9 @@
+
+<!--新闻列表-->
+<view class="news-list">
+  <view class="news-item" wx:for ="{{newsList}}" wx:key="item._id" bindtap="goToDetail" data-id="{{item._id}}"> 
+    <image src="{{item.imag}}"></image>
+    <text>{{item.title}}</text>
+  </view>
+  
+</view>

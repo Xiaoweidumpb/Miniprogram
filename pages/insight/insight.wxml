@@ -1,0 +1,1 @@
+<button bindtap="remove"> 删除 </button>
