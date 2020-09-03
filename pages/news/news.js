@@ -1,17 +1,44 @@
-const DB = wx.cloud.database().collection('news')
+const DB = wx.cloud.database().collection('news');
+const DB_favorite = wx.cloud.database().collection('favorite');
 
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    isAdd:false,
+  },
+  queryFavorite:function(id){
+    var that=this
+    let openid=""
+    let article_id = id;
+    wx.cloud.callFunction({
+      name: "getopenid",
+      success(res) {
+        openid=res.result.openid
+        DB_favorite.where({
+          openid:openid,
+          article_id:article_id
+        }).get({
+          success(res){
+            if(res.data.length==1){
+            that.setData({
+              isAdd:true,
+            })
+          }
+          }
+        })
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //console.log(options.id)
+    this.queryFavorite(options.id)
     let id = options.id;
     //根据新闻id在云数据库查找新闻
     //doc唯一查询
@@ -20,12 +47,11 @@ Page({
         //更新页面上的新闻信息和收藏状态
         this.setData({
           article: res.data
-
         })
       }
     })
   },
-
+ 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -77,20 +103,53 @@ Page({
   },
   //添加收藏
   addFavorites: function () {
-
-    let article = this.data.article;
-    wx.setStorageSync(article.id, article)
-    this.setData({
-      isAdd: true
+    if(!this.isAdd){
+    let article_id = this.data.article._id;
+    wx.cloud.callFunction({
+      name: "getopenid",
+      success(res) {
+        //console.log("获取用户id成功",res.result.openid)
+        DB_favorite.add({
+          data: {
+            openid: res.result.openid,
+            article_id: article_id
+          },
+        })
+      }
     })
+    this.setData({
+      isAdd:true
+    })
+  }
+  
   },
-
   //取消收藏
   cancelFavorita: function () {
-    let article = this.data.article;
-    wx.removeStorageSync(article.id)
-    this.setData({
-      isAdd: false
+    if(!this.isAdd){
+    let openid=""
+    let article_id = this.data.article._id;
+    wx.cloud.callFunction({
+      name: "getopenid",
+      success(res) {
+        openid=res.result.openid
+        //console.log("openid",openid)
+        wx.cloud.callFunction({
+          name:"deleFavorite",
+          data:{
+            openid:openid,
+            article_id:article_id
+          },
+        success(res){
+          console.log(res)
+        },
+        fail(res){
+          console.log("失败",res)
+        }
+        })
+      }
     })
-  },
+    this.setData({
+      isAdd:false
+    })
+  }},
 })

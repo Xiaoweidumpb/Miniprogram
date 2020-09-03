@@ -1,5 +1,8 @@
 {
   "usingComponents": {
+    "search":"/../../components/search/search"
   },
-  "onReachBottomDistance":100
+  "onReachBottomDistance":100,
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

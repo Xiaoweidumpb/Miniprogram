@@ -1,17 +1,20 @@
 // pages/insight/insight.js
 Page({
-  remove(){
-    wx.cloud.callFunction({
-      name:"remove"
-    })
-  },
+  
   /**
    * 页面的初始数据
    */
   data: {
 
   },
-
+  getopenid(){
+    wx.cloud.callFunction({
+      name:"getopenid",
+      success(res){
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

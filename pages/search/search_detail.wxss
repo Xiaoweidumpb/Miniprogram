@@ -1,0 +1,7 @@
+.viewUi{
+  height:40rpx;
+  padding:10rpx;
+  border: 3rpx solid #faca82;
+  background-color:wheat;
+  border-radius: 50rpx;
+}

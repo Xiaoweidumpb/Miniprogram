@@ -6,6 +6,7 @@
   font-size: 35rpx;
   line-height: 35rpx;
 }
+
 .img image{
   width: 100%;
 }

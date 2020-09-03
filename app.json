@@ -1,10 +1,9 @@
 {
   "pages":[
     "pages/learn/learn",
+    "pages/search/search_detail",
     "pages/news/news",
-    "pages/my/my",
-    "pages/word/word",
-    "pages/insight/insight"
+    "pages/my/my"
     
   ],
   "window":{
@@ -21,18 +20,6 @@
       "text": "学习",
       "iconPath": "icon/learn.png",
       "selectedIconPath": "icon/learn_s.png"
-    },
-    {
-      "pagePath":"pages/word/word",
-      "text": "单词",
-      "iconPath": "icon/word.png",
-      "selectedIconPath": "icon/word_s.png"
-    },
-    {
-      "pagePath": "pages/insight/insight",
-      "text": "发现",
-      "iconPath": "icon/insight.png",
-      "selectedIconPath": "icon/insight_s.png"
     },
     {
       "pagePath": "pages/my/my",

@@ -1,10 +1,6 @@
-<view class="biagei">
-<!--搜索框-->
-<search></search>
+<view class="viewUi">
+<input type="text" placeholder='            请输入要查找的文章标题（英文）' bindinput='getDataInput' >  </input>
 </view>
-
-
-<!--新闻列表-->
 <view class="news-list">
   <view class="news-item" wx:for ="{{newsList}}" wx:key="item._id" bindtap="goToDetail" data-id="{{item._id}}"> 
     <image src="{{item.imag}}"></image>

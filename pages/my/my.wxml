@@ -11,10 +11,10 @@
 
 <!-- 收藏列表 -->
 <view class="myFavorite">
-<text>我的收藏{{number}}</text>
+<text>我的收藏({{number}})</text>
   <view class="news-list">
     <view class="news-item" wx:for ="{{favoriteList}}" wx:key="item.id" bindtap="goToDetail" data-id="{{item._id}}"> 
-      <image src="{{item.img}}"></image>
+      <image src="{{item.imag}}"></image>
       <text>{{item.title}}</text>
    </view>
   </view>
